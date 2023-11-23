@@ -1,0 +1,62 @@
+data:
+  dataset_folder: data
+  train_dataset: train.csv
+  val_dataset: dev.csv
+  test_dataset: test.csv
+  use_id: False # nếu set là True thì có sử dụng thông tin id, ngược lại thì không
+
+tokenizer:
+  padding: max_length
+  max_length: 256
+  truncation: True
+  return_attention_mask: True
+
+text_embedding:
+  type: pretrained #có 3 loại, pretrained, tf_idf, count_vec
+  add_new_token: False
+  text_encoder: bert-base-multilingual-uncased
+  freeze: False
+  use_lora: False
+  # lora_target_modules: ["q", ".k", "v", ".o", "wi_0", "wi_1", "wo"]
+  lora_target_modules: ["q", "v"]
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+  d_features: 768
+  d_model: 512
+  dropout: 0.2
+
+attention:
+  layers: 3
+  heads: 8
+  d_model: 512
+  d_key: 64
+  d_value: 64
+  d_ff: 2048
+  d_feature: 2048
+  dropout: 0.2
+  use_aoa: False
+
+uni_encoder:
+  d_model: 512
+  layers: 3
+
+model:
+  type_model: trans_uni
+  intermediate_dims: 512
+  dropout: 0.2
+
+train:
+  output_dir: checkpoint
+  seed: 12345
+  num_train_epochs: 100
+  patience: 5
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  metric_for_best_model: accuracy
+  per_device_train_batch_size: 64
+  per_device_valid_batch_size: 64
+
+inference:
+  test_dataset: data/test.csv
+  batch_size: 128
