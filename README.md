@@ -5,7 +5,7 @@ Recent developments of modern chatbot systems such as ChatGPT of OpenAI or BARD 
 
 ![Our Archived](pic/dsc_2.jfif)
 
-This repo is one of the pieces of code that helped us achieve the highest position in group B in the Fact Checking competition.
+This repo is one of the pieces of code that helped us achieve the highest position in group B in the Fact Checking task.
 
 Author:
 - Quan Van Nguyen (21521333@gm.uit.edu.vn)
