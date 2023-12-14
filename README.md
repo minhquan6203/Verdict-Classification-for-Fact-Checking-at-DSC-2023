@@ -12,6 +12,5 @@ Author:
 - Dan Quang Tran (21521917@gm.uit.edu.vn)
 - Huy Quang Pham (21522163@gm.uit.edu.vn)
 - Thang Bao Kien Nguyen (21521432@gm.uit.edu.vn)
-- Nghia Hieu Nguyen (19520178@gm.uit.edu.vn)
 
 December 14, 2023
